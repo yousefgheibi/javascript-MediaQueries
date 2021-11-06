@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+body {
+  height: 96vh;
+  position: relative;
+  border: 3px solid green;
+}
+
+body h2{
+    display: flex;
+    justify-content: center;
+    padding-top: 4rem;
+}
+body p {
+  display: flex;
+  justify-content: center;
+  padding-top: 8rem;
+}
+</style>
+
+</head>
+<body class="center">
+<h2>Resize the browser window to see the effect.
+The corresponding text will be displayed.</h2>
+
+<p id="text">text</p>
+
+<script>
+    function myFunction(x) {
+  if (x.matches) {
+      document.getElementById("text").innerHTML = "This Device width >= 700";
+    
+
+   
+  } else {
+    document.getElementById("text").innerHTML = "This Device width < 700";
+    
+  }
+}
+
+var x = window.matchMedia("(max-width: 700px)");
+
+
+myFunction(x);
+x.addEventListener("change",myFunction);
+
+</script>
+</body>
+</html>
